@@ -1,0 +1,15 @@
+name: test
+description: description
+
+inputs:
+  greeting:
+    description: whom to greet
+    default: "World"
+
+outputs:
+  current-time:
+    description: time of the action
+
+runs:
+  using: "node24"
+  main: "build/index.js"
