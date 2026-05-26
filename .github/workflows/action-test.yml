@@ -5,6 +5,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v6
+
       - name: Hello world action step
         id: hello
         # uses: octocat/hello-world-javascript-action@1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b
@@ -16,3 +21,5 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.current-time }}"
+
+        # Checkout the repo - uses: actions/checkout@v3 with: # Repository name with owner. For example, actions/checkout Default: ${{ github.repository }}
